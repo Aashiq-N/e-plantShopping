@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
+import { useNavigate } from 'react-router-dom';
 import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
@@ -14,8 +15,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Handle continue shopping action
   const handleContinueShopping = (e) => {
-    e.preventDefault();
-    onContinueShopping(); // Callback to hide cart and show product list
+    navigate('/products'); // Adjust the path to match your ProductList route
   };
 
   // Increment quantity
